@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SUIDATA - ANALYSANT POUR EVITER LE SUICIDE</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Pratt
+    Template URL: https://templatemag.com/pratt-app-landing-page-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#navigation" >
+  <section id="home" name="home">
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smothscroll" href="index.html#home"><b>SUIDATA</b></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li ><a href="index.html" class="smothscroll">Home</a></li>
+          <li><a href="index.html#desc" class="smothscroll">Description</a></li>
+          <li><a href="index.html#showcase" class="smothscroll">Radial Stacked Bar</a></li>
+          <li><a href="index.html#barrace" class="smothscroll">Bar-race</a></li>
+          <li><a href="index.html#map" class="smothscroll">World Map</a></li>
+          <li class="active"><a href="gapminder.html">Gapminder</a></li>
+
+
+
+
+
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+
+
+
+    <!-- FEATURES WRAP -->
+    <div id="features" style="padding:30px;">
+      <div >
+        <div >
+          <h1 class="centered"><b>Gapminder</b></h1>
+
+          <h1 class="centered">Comment les taux de suicide ont-ils évolué en fonction du Gdp/Habitant?</h1>
+          <br>
+          <br>
+          <div >
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+            <div class="centered">
+
+             <b>Faite dérouler le curseur pour changer les années (1985-2016) </b>
+  </div>
+            <style>
+            #chart {
+              font-family: "Helvetica Neue";
+              margin-left: -20px;
+              height: 506px;
+            }
+
+            .dot { stroke: #000; }
+
+            .axis path, .axis line {
+              fill: none;
+              stroke: #000;
+              shape-rendering: crispEdges;
+            }
+
+            .year.label {
+              fill: #ddd;
+            }
+
+            .overlay {
+              fill: none;
+              pointer-events: all;
+              cursor: ew-resize;
+            }
+            .d3-tip {
+            font-family: "Helvetica Neue";
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+            pointer-events: none;
+            }
+
+            /* Creates a small triangle extender for the tooltip */
+            .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            pointer-events: none;
+            }
+
+            /* Northward tooltips */
+            .d3-tip.n:after {
+            content: "\25BC";
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+            text-align: center;
+            }
+
+            /* Eastward tooltips */
+            .d3-tip.e:after {
+            content: "\25C0";
+            margin: -4px 0 0 0;
+            top: 50%;
+            left: -8px;
+            }
+
+            /* Southward tooltips */
+            .d3-tip.s:after {
+            content: "\25B2";
+            margin: 0 0 1px 0;
+            top: -8px;
+            left: 0;
+            text-align: center;
+            }
+
+            /* Westward tooltips */
+            .d3-tip.w:after {
+            content: "\25B6";
+            margin: -4px 0 0 -1px;
+            top: 50%;
+            left: 100%;
+            }
+            </style>
+            <div id="cont" class="container-fluid text-center">
+            <div id="chart"></div>
+            </div>
+
+            <script src="https://d3js.org/d3.v3.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.3/d3-tip.min.js"></script>
+            <script>
+            //Quick fix for resizing some things for mobile-ish viewers
+            var mobileScreen = ($( window ).innerWidth() < 500 ? true : false);
+
+            //Scatterplot
+            var margin = {left: 40, top: 20, right: 20, bottom: 20},	width = Math.min($("#chart").width(), 840) - margin.left - margin.right,
+            height = width*1/2;
+
+            var svg = d3.select("#chart").append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+            // Various scales. These domains make assumptions of data, naturally.
+            var xScale = d3.scale.log().domain([300, 2e5]).range([0, width]),
+              yScale = d3.scale.linear().domain([0, 700]).range([height, 0]),
+              radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, width * 0.06]),
+              colorScale = d3.scale.category10();
+            var formatX = d3.format(".1s");
+            // The x & y axes.
+            var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(8, formatX);
+            var yAxis = d3.svg.axis().scale(yScale).orient("left");
+            var format = d3.format(".2s");
+            // Add the x-axis.
+            svg.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + height + ")")
+              .call(xAxis);
+
+            // Add the y-axis.
+            svg.append("g")
+              .attr("class", "y axis")
+              .call(yAxis);
+
+            // Add an x-axis label.
+            svg.append("text")
+              .attr("class", "x label")
+              .attr("text-anchor", "end")
+              .attr("x", width)
+              .attr("y", height - 6)
+              .text("gdp per capita, inflation-adjusted ($)");
+
+            // Add a y-axis label.
+            svg.append("text")
+              .attr("class", "y label")
+              .attr("text-anchor", "end")
+              .attr("y", 6)
+              .attr("dy", ".75em")
+              .attr("transform", "rotate(-90)")
+              .text("Suicide / 100k");
+
+            // Add the year label; the value is set on transition.
+            var label = svg.append("text")
+              .attr("class", "year label")
+              .attr("text-anchor", "end")
+              .attr("y", height - 24)
+              .attr("x", width)
+              .attr("style", "font-size:" + (width * 0.2).toString() + "px")
+              .text(1985);
+
+            var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .direction('s')
+            .html(function(d) {
+              return "<p><strong>" + d.name + "</strong></p><p><strong>Population: </strong>" + format(d.population) + "</p>";
+            })
+            // Various accessors that specify the four dimensions of data to visualize.
+            function x(d) { return d.income; }
+            function y(d) { return d.lifeExpectancy; }
+            function radius(d) { return d.population; }
+            function color(d) { return d.region; }
+            function key(d) { return d.name; }
+
+            // Load the data.
+            d3.json("dataset/SUIDATA.json", function(nations) {
+              // A bisector since many nation's data is sparsely-defined.
+              var bisect = d3.bisector(function(d) { return d[0]; });
+
+              // Add a dot per nation. Initialize the data at 1985, and set the colors.
+              var dot = svg.append("g")
+                  .call(tip)
+                  .attr("class", "dots")
+                .selectAll(".dot")
+                  .data(interpolateData(1985))
+                .enter().append("circle")
+                  .on('mouseover', tip.show)
+                  .on('mouseout', tip.hide)
+                  .attr("class", function (d) { return "dot " + d.name; })
+                  .style("fill", function(d) { return colorScale(color(d)); })
+                  .call(position)
+                  .sort(order);
+
+              // Add an overlay for the year label.
+              var box = label.node().getBBox();
+
+              var overlay = svg.append("rect")
+                  .attr("class", "overlay")
+                  .attr("x", box.x)
+                  .attr("y", box.y)
+                  .attr("width", box.width)
+                  .attr("height", box.height)
+                  .on("mouseover", enableInteraction);
+
+              // Start a transition that interpolates the data based on year.
+              svg.transition()
+                  .duration(15000)
+                  .ease("linear")
+                  .tween("year", tweenYear)
+                  .each("end", enableInteraction);
+
+              // Positions the dots based on data.
+              function position(dot) {
+                  dot.attr("cx", function(d) { return xScale(x(d)); })
+                      .attr("cy", function(d) { return yScale(y(d)); })
+                      .attr("r", function(d) { return radiusScale(radius(d)); });
+                  }
+
+              // Defines a sort order so that the smallest dots are drawn on top.
+              function order(a, b) { return radius(b) - radius(a); }
+
+              // After the transition finishes, you can mouseover to change the year.
+              function enableInteraction() {
+                  var yearScale = d3.scale.linear()
+                    .domain([1985, 2016])
+                    .range([box.x + 10, box.x + box.width - 10])
+                    .clamp(true);
+
+                  // Cancel the current transition, if any.
+                  svg.transition().duration(0);
+
+                  overlay
+                      .on("mouseover", mouseover)
+                      .on("mouseout", mouseout)
+                      .on("mousemove", mousemove)
+                      .on("touchmove", mousemove);
+
+                  function mouseover() { label.classed("active", true); }
+                  function mouseout() { label.classed("active", false); }
+                  function mousemove() { displayYear(yearScale.invert(d3.mouse(this)[0])); }
+              }
+
+              // Tweens the entire chart by first tweening the year, and then the data.
+              // For the interpolated data, the dots and label are redrawn.
+              function tweenYear() {
+                  var year = d3.interpolateNumber(1985, 2016);
+                  return function(t) { displayYear(year(t)); };
+              }
+
+              // Updates the display to show the specified year.
+              function displayYear(year) {
+                  console.log(dot.data(interpolateData(year), key).call(position).sort(order))
+                  dot.data(interpolateData(year), key).call(position).sort(order);
+                  label.text(Math.round(year));
+              }
+
+              // Interpolates the dataset for the given (fractional) year.
+              function interpolateData(year) {
+                  return nations.map(function(d) {
+                      return {
+                          name: d.name,
+                          region: d.region,
+                          income: interpolateValues(d.income, year),
+                          population: interpolateValues(d.population, year),
+                          lifeExpectancy: interpolateValues(d.lifeExpectancy, year)
+                      };
+                  });
+              }
+
+              // Finds (and possibly interpolates) the value for the specified year.
+              function interpolateValues(values, year) {
+                  var i = bisect.left(values, year, 0, values.length - 1),
+                      a = values[i];
+                  if (i > 0) {
+                      var b = values[i - 1],
+                          t = (year - a[0]) / (b[0] - a[0]);
+                      return a[1] * (1 - t) + b[1] * t;
+                  }
+                return a[1];
+              }
+            });
+            </script>
+
+          </div>
+
+          <div >
+
+            <br>
+            <!-- ACCORDION -->
+            <div class="accordion ac" id="accordion2"style="padding-left:450px; padding-right:450px;">
+              <div class="accordion-group" >
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+  		                        Description
+  		                        </a>
+                </div>
+                <!-- /accordion-heading -->
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    <p>Il s'agit d'une recréation d'une visualisation Gapminder rendue célèbre par Hans Rosling.
+                    Il montre le GdP par habitant (x), le taux de suicide par 100k de la population (y) et la population (superficie) de 180 pays au cours des 20 dernières années, en couleurs par région.
+                    Les données antérieures à 2000 étant rares, ce graphique utilise une bissection et une interpolation linéaire pour remplir les points de données manquants.</p>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Les Variables Visuelles</a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    <p><b>La positon</b> : L'axe 'x' représente le GdP par habitant. <br>
+                                   &emsp;&emsp;&emsp;&emsp;&emsp;L'axe 'y' représente le taux de suicide par 100k de la population.<br><br>
+                    <b>La taille</b> :  Les cercles croissent en fonction de la population.<br><br>
+                    <b>La couleur </b>: Les différentes couleurs sont associées au région du monde, comme expliqué dans la légende de la visualisation.
+                    </p>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+
+              <br>
+            </div>
+            <!-- Accordion -->
+          </div>
+        </div>
+      </div>
+      <!--/ .container -->
+    </div>
+    <!--/ #features -->
+  </section>
+
+</body></html>

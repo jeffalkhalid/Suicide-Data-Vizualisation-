@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SUIDATA</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Pratt
+    Template URL: https://templatemag.com/pratt-app-landing-page-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#navigation" >
+  <section id="home" name="home">
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smothscroll" href="#home"><b>SUIDATA</b></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+          <li><a href="#desc" class="smothscroll">Description</a></li>
+          <li><a href="#showcase" class="smothscroll">Radial Stacked Bar</a></li>
+          <li><a href="#barrace" class="smothscroll">Bar-race</a></li>
+          <li><a href="#map" class="smothscroll">World Map</a></li>
+          <li><a href="gapminder.html">Gapminder</a></li>
+
+
+
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+    <div id="headerwrap">
+      <div class="container">
+        <div class="row centered">
+          <div class="col-lg-12">
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree"><h1><b><u>SUIDATA</u></b></h1></a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse in">
+                <div class="accordion-inner"style="color:white;text-align: justify;" >
+                  Cette Dataset compilée a été tirée de quatre autres ensembles de données liés par le temps et le lieu,
+                  elle a été construite pour trouver des signaux corrélés à l'augmentation des nombre de suicide parmi différentes cohortes
+                  à l'échelle mondiale, à travers le spectre socio-économique.<br><br>
+
+
+                  Suicide rate dataset (Aka SUIDATA) a été tiré des réferences suivantes :<br>
+                  - United Nations Development Program. (2018). Human development index (HDI). Retrieved from <a href="http://hdr.undp.org/en/indicators/137506">http://hdr.undp.org/en/indicators/137506</a><br>
+
+                  - World Bank. (2018). World development indicators: GDP (current US$) by country:1985 to 2016. Retrieved from <a href="http://databank.worldbank.org/data/source/world-development-indicators">http://databank.worldbank.org/data/source/world-development-indicators</a><br>
+
+                  - [Szamil]. (2017). Suicide in the Twenty-First Century [dataset]. Retrieved from <a href="http://hdr.undp.org/en/indicators/137506">https://www.kaggle.com/szamil/suicide-in-the-twenty-first-century/notebook</a><br>
+
+                  - World Health Organization. (2018). Suicide prevention. Retrieved from <a href="http://www.who.int/mental_health/suicide-prevention/en/">http://www.who.int/mental_health/suicide-prevention/en/</a><br><br>
+                </div>
+                <!-- /accordion-inner -->
+              </div>
+              <!-- /collapse -->
+            </div>
+
+            <br>
+          </div>
+
+            <h5></h5>
+            <div class="row centered">
+            <img src="img/DATASET.png"></div>
+
+          <div class="col-lg-8">
+          </div>
+
+
+          <div class="col-lg-4">
+            <img class="hidden-xs hidden-sm hidden-md" src="img/arrow2.png">
+            <br>
+            <h5>La liste des attributs du SUIDATA : </h5>
+            <p>
+             country
+             ,&nbsp;year
+             ,&nbsp;sex
+             ,&nbsp;age
+             ,&nbsp;suicides_no
+             ,&nbsp;population
+             ,&nbsp;suicides/100k pop
+             ,&nbsp;country-year
+             ,&nbsp;HDI for year
+             ,&nbsp;gdp_for_year
+             ,&nbsp;gdp_per_capita
+             ,&nbsp;generation
+          </div>
+        </div>
+      </div>
+      <!--/ .container -->
+    </div>
+    <!--/ #headerwrap -->
+    <hr>
+  </section>
+
+
+  <section id="desc" name="desc" style="background-color:white">
+    <div class="container">
+    <h2>SUIDATA & Variables Visuelles:</h2><br>
+
+
+
+                  Après avoir fixé la dataset (SUIDATA) et défini l’implantation, il faut choisir la  variable visuelle.<br>
+                  Elle va permettre d’exprimer visuellement l’importance de la donnée.<br><br>
+
+                  >L’efficacité d’une solution graphique passe par la correspondance entre les propriétés des données
+                  et les propriétés de la variable visuelle qui les représentera.<br><br>
+
+                  > Le type de donnée et le type d’implantation déterminent la variable visuelle.<br>
+                  > Le choix judicieux des variables visuelles est un des éléments qui contribue non seulement à la lisibilité
+                  du document mais aussi à son intelligibilité.<br>
+                  Les informations à transmettre peuvent appartenir à trois types généraux:<br><br>
+
+                  - Quantitatif : Valeur continue avec 1 chiffre significatif, Ex: suicides_no, population<br>
+                  - Ordinal : les périodes géologiques, l'ordre chronologique. Ex: generation, age<br>
+                  - Nominal : country, sexe<br><br>
+
+                  > Les variables visuelles:<br><br>
+                  <div class="row centered">
+                  <img src="img/var_vis.png" alt="" height="340px"><br/><br/><br/>
+                  </div>
+
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour"><u>Les positions :</u></a>
+
+                    </div>
+                    <div id="collapseFour" class="accordion-body collapse">
+                      <div class="accordion-inner" >
+
+                        permettent de représenter les coordonnées (x,y) d’un élément sur le plan visuel.<br>
+
+                      </div>
+                      <!-- /accordion-inner -->
+                    </div>
+
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive"><u>Les textures :</u></a>
+
+                    </div>
+                    <div id="collapseFive" class="accordion-body collapse">
+                      <div class="accordion-inner" >
+
+                        Elles expriment la variation locale de l’échelle des éléments.<br>
+
+                      </div>
+                      <!-- /accordion-inner -->
+                    </div>
+
+
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsesixe"><u>Les tailles:</u> </a>
+
+                  </div>
+                  <div id="collapsesixe" class="accordion-body collapse">
+                    <div class="accordion-inner" >
+
+                      La variation de taille permet de traduire parfaitement les variations quantitatives.<br>
+
+                    </div>
+                    <!-- /accordion-inner -->
+                  </div>
+                  <!-- /collapse -->
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseseven"><u>Les formes:</u> </a>
+
+                  </div>
+                  <div id="collapseseven" class="accordion-body collapse">
+                    <div class="accordion-inner" >
+
+                       Elles expriment relativement bien l'identité de l'objet à représenter et donc, par relation, les différences; qu'il s'agisse de pictogrammes ou de formes fondamentales (le carré, le cercle, etc.), leur lisibilité est souvent plus grande que celle des dessins réalistes.<br>
+
+                    </div>
+                    <!-- /accordion-inner -->
+                  </div>
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseseight"><u>Les valeurs:</u> </a>
+
+                  </div>
+                  <div id="collapseseight" class="accordion-body collapse">
+                    <div class="accordion-inner" >
+
+                       La variation de valeur d'une couleur est une variation d'intensité lumineuse du plus sombre au plus clair, ou inversement; elle traduit une relation d'ordre et des différences relatives (relation quantitative).<br>
+
+                    </div>
+                    <!-- /accordion-inner -->
+                  </div>
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsenine"><u>Les couleurs:</u> </a>
+
+                  </div>
+                  <div id="collapsenine" class="accordion-body collapse">
+                    <div class="accordion-inner" >
+
+                       Comme les formes, les couleurs traduisent des différences mais ne peuvent cependant les ordonner entre elles; elles sont de plus chargées de significations culturelles et psychologiques.<br>
+
+                    </div>
+                    <!-- /accordion-inner -->
+                  </div
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseten"><u>L'orientation</u></a><br><br>
+                  </div>
+                  <div id="collapseten" class="accordion-body collapse">
+                    <div class="accordion-inner" >
+
+                      Permet de positionner un signe par rapport aux deux axes du graphique; elle exprime les différences et gagne en efficacité en combinant les variables de grains et de valeur.<br>
+
+                    </div>
+                    <!-- /accordion-inner -->
+
+
+
+
+                </div>
+
+
+
+
+  </section>
+<hr>
+
+
+
+
+
+  <section id="showcase" name="showcase" style="background-color:white">
+    <!-- INTRO WRAP -->
+    <div class="row centered">
+      <h1 class="centered" style="color:black"><b>Stacked Radial Bar</b></h1>
+
+    <h1 style="color:black;">Nombre de suicide par 100k selon l'age et le pays (1985-2016)</h1>
+  </div>
+
+
+  <div class="row" style="padding-left:30px;padding-top:10px;">
+    <div class="col-sm-6" >
+     <svg width="850" height="850" font-family="sans-serif" font-size="10"></svg>
+
+    <div >
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="d3-scale-radial.js"></script>
+    <script>
+
+    var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height")*0.7,
+        innerRadius = 100,
+        outerRadius = Math.min(width, height) * 0.7,
+        g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height * 0.7 + ")");
+
+    var x = d3.scaleBand()
+        .range([0, 2 * Math.PI])
+        .align(0);
+
+    var y = d3.scaleRadial()
+        .range([innerRadius, outerRadius]);
+
+    var z = d3.scaleOrdinal()
+        .range(["#98abc5", "#3da4ab", "#7b6888", "#6b486b", "#FF4E50", "#FC913A", "#ff8c00"]);
+
+    d3.csv("dataset/radial.csv", function(d, i, columns) {
+      for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+      d.total = t;
+      return d;
+    }, function(error, data) {
+      if (error) throw error;
+
+      weave(data, function(a, b) { return b[data.columns[6]] -  a[data.columns[6]]; });
+      x.domain(data.map(function(d) { return d.Country; }));
+      y.domain([0, d3.max(data, function(d) { return d.total; })]);
+      z.domain(data.columns.slice(1));
+
+      g.append("g")
+        .selectAll("g")
+        .data(d3.stack().keys(data.columns.slice(1))(data))
+        .enter().append("g")
+          .attr("fill", function(d) { return z(d.key); })
+        .selectAll("path")
+        .data(function(d) { return d; })
+        .enter().append("path")
+          .attr("d", d3.arc()
+              .innerRadius(function(d) { return y(d[0]); })
+              .outerRadius(function(d) { return y(d[1]); })
+              .startAngle(function(d) { return x(d.data.Country); })
+              .endAngle(function(d) { return x(d.data.Country) + x.bandwidth(); })
+              .padAngle(0.01)
+              .padRadius(innerRadius));
+
+      var label = g.append("g")
+        .selectAll("g")
+        .data(data)
+        .enter().append("g")
+          .attr("text-anchor", "middle")
+          .attr("transform", function(d) { return "rotate(" + ((x(d.Country) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")translate(" + innerRadius + ",0)"; });
+
+      label.append("line")
+          .attr("x2", -5)
+          .attr("stroke", "#000");
+
+      label.append("text").attr("transform",function(){return"translate(+120,+3)"})
+          .text(function(d) { return d.Country; });
+
+      var yAxis = g.append("g")
+          .attr("text-anchor", "end");
+
+      var yTick = yAxis
+        .selectAll("g")
+        .data(y.ticks(10).slice(1))
+        .enter().append("g");
+
+      yTick.append("circle")
+          .attr("fill", "none")
+          .attr("stroke", "#000")
+          .attr("stroke-opacity", 0.5)
+          .attr("r", y);
+
+      yTick.append("text")
+          .attr("x", -6)
+          .attr("y", function(d) { return -y(d); })
+          .attr("dy", "0.35em")
+          .attr("fill", "none")
+          .attr("stroke", "#fff")
+          .attr("stroke-linejoin", "round")
+          .attr("stroke-width", 3)
+          .text(y.tickFormat(10, "s"));
+
+      yTick.append("text")
+          .attr("x", -6)
+          .attr("y", function(d) { return -y(d); })
+          .attr("dy", "0.35em")
+          .text(y.tickFormat(10, "s"));
+
+      yAxis.append("text")
+          .attr("x", -6)
+          .attr("y", function(d) { return -y(y.ticks(10).pop()); })
+          .attr("dy", "-1em")
+          .text("Population");
+
+      var legend = g.append("g")
+        .selectAll("g")
+        .data(data.columns.slice(1).reverse())
+        .enter().append("g")
+          .attr("transform", function(d, i) { return "translate(-40," + (i - (data.columns.length - 1) / 2) * 20 + ")"; });
+
+      legend.append("rect")
+          .attr("width", 18)
+          .attr("height", 18)
+          .attr("fill", z);
+
+      legend.append("text")
+          .attr("x", 24)
+          .attr("y", 9)
+          .attr("dy", "0.35em")
+          .text(function(d) { return d; });
+    });
+
+    function weave(array, compare) {
+      var i = -1, j, n = array.sort(compare).length, weave = new Array(n);
+      while (++i < n) weave[i] = array[(j = i << 1) >= n ? (n - i << 1) - 1 : j];
+      while (--n >= 0) array[n] = weave[n];
+    }
+
+    </script>
+
+    </div>
+
+  </div>
+    <div class="col-sm-5" style="padding-top:40px;margin-left:40px;">
+      <br/><br/><br/>
+      <img src="img/tab_radial.png" alt=""><br/><br/><br/><br/>
+
+
+
+    <!-- ACCORDION -->
+            <div class="accordion ac" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                  Description
+                                  </a>
+                </div>
+                <!-- /accordion-heading -->
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    Ce graphique à barres radiales est une visualisation du nombre de suicide par 100k selon l'age et le pays.<br/>
+                    Il représente les données des différents cas de suicide commis de 1985 jusqu’à 2016. <br/><br/>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Les Variables Visuelles</a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    Nos variables visuelles sont :<br/>
+
+                    La longueur: la longueur de chaque barre représente la quantité de suicide par pays et par tranche d'age.<br/>
+
+                    La couleur: la couleur représente le pourcentage de suicide d'une tranche d'age par rapport au nombre de suicide par 100k d'un pays.
+
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+              <!-- /accordion-group -->
+
+              <!-- /accordion-group -->
+
+            </div>
+            <!-- Accordion -->
+  </div>
+  </div>
+      </div>
+
+
+    </section>
+      <hr>
+
+
+<div  style="padding-left:30px;">
+      <section id="barrace" name="barrace"  >
+          <div class="row centered">
+            <div class="col-lg-12">
+              <h1><b>Race Bar Chart</b></h1>
+              <br>
+
+            </div>
+          </div>
+        <div id="graph_bar">
+          <div class="container">
+
+            <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-lg-8 col-lg-offset-2">
+              <script src="https://d3js.org/d3.v5.min.js"></script>
+              <script src="./js/barrace.js"></script>
+
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="col-sm-4">
+        <br>
+        <br>
+        <P><br>La représentation ci-contre est un bar race chart qui permet de suivre l'évolution du suicide comme indicateur sur la santé mentale au monde, et ce en classant les 12 pays les plus touchés par ce phénomène.Nous avons choisi le nombre de suicides par 100K habitants
+          pour refleter au mieux ce phénomène.</p>
+        <p>  Nous avons choisi comme variables visuelles <b>"la longeur"</b> et <b>"la position"</b> pour représenter l'évolution de notre indicateur dans les différents pays du monde.
+          <br>En effet, plus <b>la longueur</b> de la barre est longue, plus le nombre de suicides par 100K par habitants est grand.
+          <br>De même, <b>la position</b> de la barre indique l'ampleur du phénomène observé. Plus une barre est située en haut,
+          plus on a de suicides par 100k habitants
+
+        </P>
+      </div>
+    </div>
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/php-mail-form/validate.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+  <section  id="map" name="map">
+
+      <div class="row centered">
+        <div class="col-lg-12">
+          <h1><b>Choropleth Map</b></h1>
+          <br>
+          <br>
+          <br>
+
+
+      </div>
+    <div  id="graph_map">
+
+        <div class="row" >
+
+          <script src="https://d3js.org/d3.v5.min.js"></script>
+          <script src="https://d3js.org/d3.v6.js"></script>
+          <script src="https://d3js.org/d3.v5.js"></script>
+          <script src="https://d3js.org/d3.v4.js"></script>
+          <script src="./js/map.js"></script>
+
+
+      </div>
+
+
+    </div>
+  </section>
+  <div class="col-sm-4"style="margin-left:30px" >
+    <br>
+    <P>Cette représentation est une carte choroplèthe de la présence du suicide comme indicateur sur la santé mentale au monde.Nous avons choisi le nombre de suicides par 100K habitants
+      pour refleter au mieux ce phénomène.</p>
+    <p>  En avançant dans le temps et en analysant les différentes zones géographiques, nous avons choisi la variables visuelle <b>"Teinte"</b> pour représenter l'évolution de notre indicateur dans les différents pays du monde.
+      En effet, une couleur de teinte plus sombre indique un nombre de suicides par 100K par habitants plus important. Cela nous permet de suivre les pays où le phénomène est beaucoup plus important (Pays de l'Europe de l'Est)
+
+    </P>
+  </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-lg-8 col-lg-offset-2">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+      <div class="slidecontainer">
+        <input type="range" min="1985" max="2016" value="1985" class="slider" id="myRange"
+          onchange="update(this.value)" style="background-color: black;">
+
+      </div>
+      </div>
+      <p class="nav navbar-nav main-nav-list" style="font-size: 32px;">Année: <span id="demo" class="main-color" style="font-size: 32px;"></span>
+      </p>
+      <br>
+      <script>
+
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        }
+      </script>
+      </div>
+<br>
+<div class="centered">
+  <b>Faite dérouler le curseur pour changer les années (1985-2016) </b>
+</div>
+<br>
+
+        <div id="copyrights">
+          <div class="container">
+            <p>
+            </p>
+            <div class="credits">
+              <!--
+                You are NOT allowed to delete the credit link to TemplateMag with free version.
+                You can delete the credit link only if you bought the pro version.
+                Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/pratt-app-landing-page-template/
+                Licensing information: https://templatemag.com/license/
+              -->
+            </div>
+          </div>
+        </div>
+
+</body>
+</html>
